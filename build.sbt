@@ -1,7 +1,7 @@
 import sbtcrossproject.{ CrossType, crossProject }
 
 ThisBuild / organization := "io.circe"
-ThisBuild / crossScalaVersions := Seq("2.12.15", "2.13.7")
+ThisBuild / crossScalaVersions := Seq("2.12.18", "2.13.12")
 ThisBuild / githubWorkflowJavaVersions := Seq("adopt@1.8")
 ThisBuild / githubWorkflowPublishTargetBranches := Nil
 ThisBuild / githubWorkflowBuild := Seq(
@@ -31,7 +31,7 @@ val compilerOptions = Seq(
   "-Ywarn-numeric-widen"
 )
 
-val circeVersion = "0.14.1"
+val circeVersion = "0.14.6"
 val previousCirceGoldenVersion = "0.2.1"
 
 def priorTo2_13(scalaVersion: String): Boolean =
@@ -105,8 +105,8 @@ lazy val example1 = project
   .settings(
     libraryDependencies ++= Seq(
       "io.circe" %% "circe-core" % circeVersion,
-      "org.scalacheck" %% "scalacheck" % "1.15.4",
-      "org.typelevel" %%% "discipline-scalatest" % "2.1.5" % Test
+      "org.scalacheck" %% "scalacheck" % "1.17.0",
+      "org.typelevel" %%% "discipline-scalatest" % "2.2.0" % Test
     )
   )
   .settings(noPublishSettings)
